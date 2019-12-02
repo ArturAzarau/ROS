@@ -14,8 +14,7 @@ ros::Rate loop_rate(1);
 
 std_msgs::Int32 msg;
 int a; 
-while (cin » a) 
-{
+while (cin » a) {
 loop_rate.sleep(); 
 msg.data = a; 
 pub.publish(msg); 
