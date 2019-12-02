@@ -4,7 +4,7 @@
 
 using namespace std; 
 
-void receive(const std_msgs::Int32& msh) {
+void receive(const std_msgs::Int32& msg) {
 	cout << ros::this_node::getName() << ": data: " << msg.data << endl;
 	return;
 }
