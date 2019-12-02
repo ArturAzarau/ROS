@@ -8,6 +8,7 @@ public:
 	SubscribeAndPublish() {
 		publisher = n.advertise<visualization_msgs::Marker>("/output", 10);
 		subscriber = n.subscribe("/input", 10, &SubscribeAndPublish::callback, this);
+		counter = 0;
 	}
 
 	void callback(const geomerty_msgs::Point& point) {
@@ -23,8 +24,7 @@ public:
 	}
 
 private:
-	std_msgs::Int32 type = 1;
-	std_msgs:: Int32 counter = 0;
+	int counter;
 	ros::NodeHandle n;
 	ros::Publisher publisher;
 	ros::Subscriber subscriber;
